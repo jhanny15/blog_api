@@ -18,14 +18,14 @@ services:
 
 
   db:  
-    image: mysql/mysql-server:5.7
+    image: mysql:8.0
     container_name: lumen_db
     restart: always
     environment: 
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: laravel-db
-      MYSQL_USER: lorenzo
-      MYSQL_PASSWORD: root
+      MYSQL_USER: main
+      MYSQL_PASSWORD: pass
     # volumes:  
     #   - ./db:/var/www/html
     ports:

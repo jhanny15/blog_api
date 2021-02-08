@@ -25,12 +25,12 @@ RUN echo 'xdebug.idekey="VSCODE"' >> /usr/local/etc/php/php.ini
 # RUN echo 'xdebug.remote_log="/var/www/html/xdebug.log"' >> /usr/local/etc/php/php.ini
 
 
-# Installare composer e forse pdo_mysql
+# Installare composer, pdo_mysql, mysqli
 RUN \
     docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-configure mysqli --with-mysqli=mysqlnd \
-    && docker-php-ext-install pdo_mysql 
-
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install mysqli
 #Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
