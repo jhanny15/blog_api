@@ -3,7 +3,7 @@ services:
   
   #### Frontend Services
   
-  api:  
+  web_api:  
     build: ./
     container_name: lumen_api
     restart: always
