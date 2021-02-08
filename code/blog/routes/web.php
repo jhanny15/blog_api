@@ -35,3 +35,5 @@ $router->group(['prefix' => 'api'], function () use ($router) {
  
 });
 
+$router->get('tests', ['uses' => 'TestJobController@testEcho']);
+
